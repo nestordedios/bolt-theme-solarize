@@ -1,0 +1,30 @@
+{% extends 'master.twig' %}
+{% block bodyclass %}no-sidebar{% endblock bodyclass %}
+{% block banner %}{% endblock banner %}
+{% block main %}
+<!-- Main Page Content and Sidebar -->
+    <!-- Main Blog Content -->
+<div id="main" class="wrapper style4">
+
+                <!-- Content -->
+                <div id="content" class="container">
+                    <section>
+                        <header class="major">
+                            <h2>No Sidebar</h2>
+                            <span class="byline">Integer sit amet pede vel arcu aliquet pretium</span>
+                        </header>
+                        <p>{{ record.teaser }}</p>
+                        <p>{{ record.body }}</p>
+                        <p>{{ record.teaser }}</p>
+                    </section>
+                </div>
+            </div>
+    <!-- End Main Content -->
+</div>
+    <!-- Team -->
+    {% include '_team.twig' %}
+<!-- End Main Content and Sidebar -->
+{% endblock main %}
+
+
+

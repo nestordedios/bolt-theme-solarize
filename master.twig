@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<!--
+	Solarize by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		{% block head %}
+		<title>
+		{% block title %}
+		{% if record.title is defined %} {{ record.title|striptags }} | {% endif %}
+		{{ app.config.get('general/sitename') }}
+		{% if record.title is not defined and app.config.get('general/payoff') %} | {{ app.config.get('general/payoff') }}
+		{% endif %}
+		{% endblock title %}
+		</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		
+		{% block scripts %}
+
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="{{ paths.theme }}js/jquery.min.js"></script>
+		<script src="{{ paths.theme }}js/jquery.dropotron.min.js"></script>
+		<script src="{{ paths.theme }}js/skel.min.js"></script>
+		<script src="{{ paths.theme }}js/skel-layers.min.js"></script>
+		<script src="{{ paths.theme }}js/init.js"></script>
+		
+		{% endblock scripts %}
+
+		{% block stylesheets %}
+		
+		
+			<link rel="stylesheet" href="{{ paths.theme }}css/skel.css" />
+			<link rel="stylesheet" href="{{ paths.theme }}css/style.css" />
+		
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+		
+		{% endblock stylesheets %}
+
+		{% 	endblock head %}
+
+	</head>
+	<body class="{% block bodyclass %}{% endblock %}">
+
+		<!-- Header Wrapper -->
+			<div class="wrapper style1">
+			
+			<!-- Header -->
+				{% block header %}
+					<div id="header">
+						<div class="container">
+								
+							<!-- Logo -->
+								<h1><a href="{{ paths.root }}" id="logo">Solarize</a></h1>
+							
+							<!-- Nav -->
+								<nav id="nav">
+									<ul>
+										{{ menu() }}
+									</ul>
+								</nav>
+						</div>
+					</div>
+
+				{% endblock header %}
+
+			{% block banner %}
+			{% endblock banner %}
+
+			</div>
+
+			{% block main %}
+			{% endblock main %}
+
+			{% block team %}
+			{% endblock team %}
+
+	<!-- Footer -->
+		<div id="footer">
+			
+			{% block footer %}
+		
+			<section class="container">
+				<header class="major">
+					<h2>Connect with us</h2>
+					<span class="byline">Integer sit amet pede vel arcu aliquet pretium</span>
+				</header>
+				<ul class="icons">
+					<li class="active"><a href="#" class="fa fa-facebook"><span>Facebook</span></a></li>
+					<li><a href="#" class="fa fa-twitter"><span>Twitter</span></a></li>
+					<li><a href="#" class="fa fa-dribbble"><span>Pinterest</span></a></li>
+					<li><a href="#" class="fa fa-google-plus"><span>Google+</span></a></li>
+				</ul>
+				<hr />
+			</section>
+			
+			<!-- Copyright -->
+				<div id="copyright">
+					Design: <a href="http://templated.co">TEMPLATED</a> Images: <a href="http://unsplash.com">Unsplash</a> (<a href="http://unsplash.com/cc0">CC0</a>)
+				</div>		
+
+			{% endblock footer %}
+
+		</div>
+
+	</body>
+</html>

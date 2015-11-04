@@ -1,0 +1,93 @@
+{% extends 'master.twig' %}
+
+{% block bodyclass %}homepage{% endblock bodyclass %}
+
+		{% block banner %}
+			<!-- Banner -->
+			<div id="banner">
+				<section class="container">
+					<h2>Solarize</h2>
+					<span>Design by Templated</span>
+					<p>Pellentesque pede. Donec pulvinar ullamcorper metus. In eu odio at lectus pulvinar mollis. Vestibulum sem magna.</p>
+				</section>
+			</div>
+		</div>
+		{% endblock banner %}
+
+		{% block main %}
+		<!-- Section One -->
+			<div class="wrapper style2">
+				<section class="container">
+					<div class="row double">
+						<div class="6u">
+							<header class="major">
+								<h2>{{ record.title }}</h2>
+								{% if record.image is defined and record.image is not empty %}
+                    				<div class="large-5 columns imageholder">
+                        				<a href="{{ image(record.image) }}">
+                            				<img src="{{ thumbnail(record.image, 550, 350) }}">
+                        				</a>
+                    				</div>
+                				{% endif %}
+								<span class="byline">{{ record.teaser }}</span>
+							</header>
+						</div>
+						<div class="6u">
+							<h3>{{ record.title }}</h3>
+							<p>{{ record.teaser }}</p>
+							<a href="#" class="button">{{ record.title }}</a>
+						</div>
+					</div>
+				</section>
+			</div>
+
+		<!-- Section Two -->
+			<div class="wrapper style3">
+				<section class="container">
+					<header class="major">
+						<h2>{{ record.title }}</h2>
+					</header>
+					<p>{{ record.teaser }}</p>
+					<a href="#" class="button alt">{{ record.title }}</a>
+				</section>
+			</div>
+
+		<!-- Section Three -->
+			<div class="wrapper style4">
+				<section class="container">
+					<header class="major">
+						<h2>{{ record.title }}</h2>
+						<span class="byline">{{ record.slug }}</span>
+					</header>
+					<div class="row flush">
+						{% setcontent pages = 'pages/latest/3' %}
+						{% for page in pages %}
+						<div class="4u">
+							<ul class="special-icons">
+								<li>
+									<span class="fa fa-cogs"></span>
+									<h3>{{ page.slug }}</h3>
+									<p>{{ page.teaser }}</p>
+								</li>
+								<li>
+									<span class="fa fa-wrench"></span>
+									<h3>{{ page.slug }}</h3>
+									<p>{{ page.teaser }}</p>
+								</li>
+								<li>
+									<span class="fa fa-leaf"></span>
+									<h3>{{ page.slug }}</h3>
+									<p>{{ page.teaser }}</p>
+								</li>
+							</ul>
+						</div>
+						{% endfor %}
+					</div>
+				</section>
+			</div>
+
+			{% include '_team.twig' %}
+
+		{% endblock main %}
+
+

@@ -1,0 +1,55 @@
+{% extends 'master.twig' %}
+
+{% block bodyclass %}left-sidebar{% endblock bodyclass %}
+
+{% block main %}
+	<!-- Main -->
+			<div id="main" class="wrapper style4">
+				<div class="container">
+					<div class="row">
+
+						<!-- Sidebar -->
+						<div id="sidebar" class="4u">
+							<section>
+								<header class="major">
+									<h2>Latest Pages</h2>
+								</header>									
+								<ul class="default">
+									{% setcontent pages = 'pages/latest/6' %}
+									{% for page in pages %}
+										<li><a href="{{ page.link }}">{{ page.title }}</a></li>
+									{% endfor %}
+								</ul>
+							</section>
+							<section>
+								<header class="major">
+									<h2>Latest Entries</h2>
+								</header>
+								<ul class="default">
+									{% setcontent entries = 'entry/latest/6' %}
+									{% for entry in entries %}	
+										<li><a href="{{ entry.link }}">{{ entry.title }}}</a></li>
+									{% endfor %}
+								</ul>
+							</section>
+						</div>
+
+						<!-- Content -->
+						<div id="content" class="8u skel-cell-important">
+							<section>
+								<header class="major">
+									<h2>{{ record.title }}</h2>
+									<span class="byline">{{ record.slug }}</span>
+								</header>
+								<p>{{ record.teaser }}</p>
+								<p>{{ record.body }}</p>
+								<p>{{ record.teaser }}</p>
+							</section>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		{% include '_team.twig' %}
+
+{% endblock main %}

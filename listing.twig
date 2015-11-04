@@ -1,0 +1,47 @@
+{% extends 'master.twig' %}
+
+{% block main %}
+
+    <!-- Main Blog Content -->
+    <div class="wrapper style2">
+        {% for page in records %}
+            <section class="container">
+                <div class="row double">
+                    <div class="6u">
+                        <header class="major">
+                            <h2>{{ page.title }}</h2>
+                                {% if page.image is defined and page.image is not empty %}
+                                    <div class="large-5 columns imageholder">
+                                        <a href="{{ image(page.image) }}">
+                                            <img src="{{ thumbnail(page.image, 550, 350) }}">
+                                        </a>
+                                    </div>
+                                {% endif %}
+                            <span class="byline">{{ page.teaser }}</span>
+                        </header>
+                    </div>
+                    <div class="6u">
+                        <h3>{{ page.title }}</h3>
+                        <p>{{ page.teaser }}</p>
+                        <a href="{{ page.link }}" class="button">{{ page.slug }}</a>
+                    </div>
+                </div>
+            </section>
+        {% endfor %}
+
+            <section class="container">
+                <div class="row double">
+                    <div class="pager 10u">
+                            {{ pager('', 3, '_pagination.twig' ) }}
+                    </div>
+                </div>
+            </section>
+
+        
+
+    </div>
+
+    <!-- End Main Content -->
+    {% include '_team.twig' %}
+
+{% endblock main %}
