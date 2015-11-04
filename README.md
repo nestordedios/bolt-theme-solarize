@@ -1,0 +1,5 @@
+Bolt theme solarize
+===================
+
+Hi!
+
