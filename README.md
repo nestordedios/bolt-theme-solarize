@@ -24,8 +24,3 @@ record_template: record-sidebar-right.twig
 Don't forget to clear yor cache every time you make changes.
 
 Check the screenshots folder to discover more of this theme.
-
-
-
-
-
