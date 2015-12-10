@@ -18,26 +18,27 @@
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
+		<script>
+        var paths = {
+            theme : '{{ paths.theme }}'
+        };
+        </script>
 		
 		{% block scripts %}
-
 		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
 		<script src="{{ paths.theme }}js/jquery.min.js"></script>
 		<script src="{{ paths.theme }}js/jquery.dropotron.min.js"></script>
 		<script src="{{ paths.theme }}js/skel.min.js"></script>
 		<script src="{{ paths.theme }}js/skel-layers.min.js"></script>
-		<script src="{{ paths.theme }}js/init.js"></script>
-		
+		<script src="{{ paths.theme }}js/init.js"></script>		
 		{% endblock scripts %}
 
-		{% block stylesheets %}
-		
-		
+		{% block stylesheets %}		
+		<noscript>|
 			<link rel="stylesheet" href="{{ paths.theme }}css/skel.css" />
 			<link rel="stylesheet" href="{{ paths.theme }}css/style.css" />
-		
-		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
-		
+		</noscript>		
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->		
 		{% endblock stylesheets %}
 
 		{% 	endblock head %}
