@@ -11,9 +11,9 @@
                         <header class="major">
                             <h2>{{ page.title }}</h2>
                                 {% if page.image is defined and page.image is not empty %}
-                                    <div class="large-5 columns imageholder">
+                                    <div class="large-4 columns imageholder">
                                         <a href="{{ image(page.image) }}">
-                                            <img src="{{ thumbnail(page.image, 550, 350) }}">
+                                            <img src="{{ thumbnail(page.image, 420, 350) }}">
                                         </a>
                                     </div>
                                 {% endif %}
